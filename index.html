@@ -1,0 +1,329 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Business optimization and profit growth consulting. Practical strategies to improve efficiency, reduce costs, and increase profit." />
+  <title>Business Optimization & Profit Growth</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0f1b31;
+      --text:#f2f6ff;
+      --muted:#a7b5d1;
+      --accent:#5aa7ff;
+      --accent2:#37d39a;
+      --line:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:radial-gradient(circle at top,#0e1a30 0,#07111f 55%,#050b14 100%);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:24px}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:10px 0 26px;
+    }
+    .logo{font-weight:800;letter-spacing:.3px;font-size:1.05rem}
+    .nav{display:flex;gap:18px;color:var(--muted);flex-wrap:wrap}
+    .nav a:hover{color:var(--text)}
+    .hero{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+      padding:18px 0 12px;
+    }
+    .panel{
+      background:linear-gradient(180deg,rgba(18,34,61,.96),rgba(13,24,44,.96));
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:0 24px 70px rgba(0,0,0,.28);
+    }
+    .hero-main{padding:42px}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--accent2);
+      font-size:.82rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .kicker:before{
+      content:'';
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent2);
+      box-shadow:0 0 0 6px rgba(55,211,154,.12);
+    }
+    h1{
+      font-size:clamp(2.3rem,5vw,4.8rem);
+      line-height:1.02;
+      margin:16px 0 16px;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:1.08rem;
+      line-height:1.75;
+      max-width:62ch;
+    }
+    .btns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+    .btn{
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid var(--line);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),#79c5ff);
+      color:#07111f;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--text);
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:28px;
+    }
+    .stat{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .stat b{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:6px;
+    }
+    .stat span{
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.4;
+    }
+    .hero-side{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .side-title{font-size:1.15rem;margin:0 0 8px}
+    .box{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      margin-top:14px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+    section{padding:16px 0}
+    h2{font-size:clamp(1.6rem,2vw,2.35rem);margin:0 0 14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(180deg,rgba(18,34,61,.9),rgba(15,27,49,.9));
+      border:1px solid var(--line);
+    }
+    .card b{display:block;font-size:1.05rem;margin-bottom:10px}
+    .muted{color:var(--muted);line-height:1.75}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{
+      padding:20px;
+      border-radius:18px;
+[10.05.2026 22:17] Maksim: background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+    .step b{
+      display:inline-flex;
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      background:var(--accent);
+      color:#07111f;
+      margin-bottom:12px;
+      font-weight:800;
+    }
+    .cta{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+      padding:28px;
+    }
+    input,textarea{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#091423;
+      color:var(--text);
+      margin-top:10px;
+      font:inherit;
+    }
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:.95rem;color:var(--muted)}
+    footer{padding:28px 0 36px;color:var(--muted);font-size:.95rem}
+    .contact-list{display:grid;gap:10px;margin-top:12px}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+    @media (max-width: 920px){
+      .hero,.grid,.steps,.cta{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .nav{display:none}
+      .hero-main{padding:28px}
+      .hero-side{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Profit Optimization</div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="panel hero-main">
+        <div class="kicker">Business Consulting</div>
+        <h1>Business Optimization & Profit Growth</h1>
+        <div class="lead">
+          I help businesses find hidden inefficiencies, reduce unnecessary costs, and build a system that drives more profit.
+          My work focuses on practical results, not abstract theory.
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="#contact">Book a Consultation</a>
+          <a class="btn secondary" href="#services">View Services</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>Audit</b><span>See where money is lost</span></div>
+          <div class="stat"><b>Optimize</b><span>Reduce waste and improve processes</span></div>
+          <div class="stat"><b>Grow</b><span>Focus on profit and performance</span></div>
+        </div>
+      </div>
+
+      <div class="panel hero-side">
+        <div>
+          <h2 class="side-title">What I Do</h2>
+          <div class="box">I analyze processes, sales, expenses, and growth opportunities to see the full picture.</div>
+          <div class="box">I provide clear, practical improvements that can be implemented without chaos or unnecessary complexity.</div>
+          <div class="box">I help businesses become more profitable, manageable, and sustainable.</div>
+        </div>
+        <div class="box">
+          Ideal for small and medium businesses, service companies, and online projects that want structured growth.
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">
+          <b>Business Audit</b>
+          <p class="muted">Review processes, finances, and operations to uncover weak points and hidden losses.</p>
+        </div>
+        <div class="card">
+          <b>Process Optimization</b>
+          <p class="muted">Simplify workflows, remove unnecessary steps, and help your team work faster.</p>
+        </div>
+        <div class="card">
+          <b>Profit Growth</b>
+          <p class="muted">Find opportunities to increase revenue and margins so your business delivers better results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>How It Works</h2>
+      <div class="steps">
+[10.05.2026 22:17] Maksim: <div class="step"><b>1</b><div class="muted">We discuss your goals and current business situation.</div></div>
+        <div class="step"><b>2</b><div class="muted">I analyze processes, expenses, sales, and bottlenecks.</div></div>
+        <div class="step"><b>3</b><div class="muted">I prepare a clear improvement plan with priorities.</div></div>
+        <div class="step"><b>4</b><div class="muted">We implement changes and track the results.</div></div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="panel cta">
+        <div>
+          <h2>What You Get</h2>
+          <p class="muted">
+            You get a clear view of what is holding your business back, practical recommendations, and an action plan you can start using right away.
+            This approach helps reduce chaos, improve performance, and make profit more stable.
+          </p>
+          <div class="contact-list">
+            <span class="tag">• Less waste</span>
+            <span class="tag">• Better control</span>
+            <span class="tag">• Higher profit</span>
+          </div>
+        </div>
+        <div>
+          <div class="box">My focus is on practical changes that create measurable impact and help your business grow without extra stress.</div>
+          <div class="box">This site is ready to publish, and the contact details are clickable.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="panel cta">
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">Leave a message and I will get back to you to discuss your business goals and possible growth opportunities.</p>
+
+          <div class="box">
+            <b>Phone</b><br>
+            <a href="tel:+36206257204">+36 20 625 7204</a>
+          </div>
+
+          <div class="box">
+            <b>Email</b><br>
+            <a href="mailto:nt.biz2017@gmail.com">nt.biz2017@gmail.com</a>
+          </div>
+        </div>
+        <div>
+          <div class="box"><b>Ready to Launch</b><br><span class="small">Upload this file as index.html and publish it on your hosting or GitHub Pages.</span></div>
+          <div class="box"><b>Easy to Update</b><br><span class="small">You can later change texts, images, contacts, and colors whenever needed.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Profit Optimization. Business optimization and profit growth.</footer>
+  </div>
+</body>
+</html>
